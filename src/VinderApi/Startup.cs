@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Vinder.Services.AzureStorage.Factories;
+using Vinder.Services.AzureStorage.Interfaces;
 
 namespace VinderApi
 {
@@ -29,6 +31,8 @@ namespace VinderApi
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddScoped<IAzureFileHandlerFactory, AzureFileHandlerFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
