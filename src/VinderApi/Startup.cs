@@ -39,6 +39,8 @@ namespace VinderApi
             });
 
             services.Configure<AzureStorageSettings>(Configuration.GetSection(nameof(AzureStorageSettings)));
+            services.Configure<KairosSettings>(Configuration.GetSection(nameof(KairosSettings)));
+
             services.AddScoped<IAzureFileHandlerFactory, AzureFileHandlerFactory>();
         }
 

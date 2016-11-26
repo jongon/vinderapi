@@ -16,7 +16,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Vinder.Services.AzureStorag
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Vinder.Common", "src\Vinder.Common\Vinder.Common.xproj", "{10C66931-2866-47E1-9A25-798CE6034E69}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Vinders.Library", "src\Vinders.Library\Vinders.Library.xproj", "{67535072-9634-443B-A4E6-79369792696C}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Vinder.Library", "src\Vinder.Library\Vinder.Library.xproj", "{67535072-9634-443B-A4E6-79369792696C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
