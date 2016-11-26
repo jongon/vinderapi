@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,6 +39,8 @@ namespace VinderApi
                 config.ModelBinderProviders.Insert(0, new FormFileModelBinderProvider());
             });
 
+            services.AddCors();
+
             services.Configure<AzureStorageSettings>(Configuration.GetSection(nameof(AzureStorageSettings)));
             services.Configure<KairosSettings>(Configuration.GetSection(nameof(KairosSettings)));
 
@@ -49,6 +52,11 @@ namespace VinderApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            app.UseCors(builder =>
+                 builder.WithOrigins("*")
+                 .AllowAnyHeader()
+            );
 
             app.UseMvc();
         }
