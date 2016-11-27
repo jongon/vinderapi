@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Vinder.DAL.Configuration;
 using Vinder.DAL.Interfaces;
 using Vinder.DAL.Repositories;
 
@@ -11,9 +12,9 @@ namespace Vinder.DAL.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly DbContext Context;
+        protected readonly ApplicationDbContext Context;
 
-        public Repository(DbContext context)
+        public Repository(ApplicationDbContext context)
         {
             Context = context;
         }

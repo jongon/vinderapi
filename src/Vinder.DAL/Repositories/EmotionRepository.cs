@@ -10,7 +10,7 @@ namespace Vinder.DAL.Repositories
 {
     public class EmotionRepository : Repository<Emotion>, IEmotionRepository
     {
-        public EmotionRepository(DbContext context) : base(context)
+        public EmotionRepository(ApplicationDbContext context) : base(context)
         {
         }
     }
