@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Vinder.Common.VideoAnalysis
+namespace Vinders.Library.VideoAnalysis
 {
     public class VideoAnalysis
     {

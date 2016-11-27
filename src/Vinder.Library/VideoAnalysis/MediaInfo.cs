@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Vinder.Common.VideoAnalysis
+﻿namespace Vinders.Library.VideoAnalysis
 {
     public class MediaInfo
     {
@@ -15,7 +10,7 @@ namespace Vinder.Common.VideoAnalysis
 
         public string Type { get; set; }
 
-        public string FileName { get; set; }
+        public string File { get; set; }
 
         public string MimeType { get; set; }
     }

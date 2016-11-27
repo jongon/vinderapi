@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Vinder.Common.VideoAnalysis
+namespace Vinder.DAL
 {
-    public class Emotions
+    public class Emotion
     {
         public decimal Anger { get; set; }
 

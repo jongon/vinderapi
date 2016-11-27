@@ -49,7 +49,8 @@ namespace VinderApi.Controllers
         /// <summary>
         /// Uploads a video to Azure Blob Storage
         /// </summary>
-        /// <param name="video">Video</param>
+        /// <param name="url">Url</param>
+        /// <param name="fileName">FileName</param>
         /// <returns>Video's Uri on Azure Storage blob</returns>
         [HttpPost]
         public async Task<IActionResult> Post(string url, string fileName)

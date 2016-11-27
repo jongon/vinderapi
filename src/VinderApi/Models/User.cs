@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Vinder.Common.VideoAnalysis
+namespace VinderApi.Models
 {
-    public class Appearance
+    public class User
     {
-        public string Glasses { get; set; }
+
     }
 }

@@ -31,12 +31,24 @@ namespace VinderApi.Controllers
             IOptions<KairosSettings> kairosSettings)
         {
             _kairosSettings = kairosSettings.Value;
+            _videoAnalizer = new VideoAnalizer(
+                _kairosSettings.Id,
+                _kairosSettings.Key,
+                _kairosSettings.MediaUrl,
+                _kairosSettings.AnalyticsUrl);
         }
+
+        [HttpGet]
+        public async Task<ActionResult> Get(string id)
+        {
+            return Json(await _videoAnalizer.GetAnalytics(id));
+        }
+
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string url)
+        public async Task<ActionResult> Post(string url)
         {
-
+            return Json(await _videoAnalizer.PostVideo(url));
         }
     }
 }
