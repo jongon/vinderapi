@@ -13,5 +13,7 @@ namespace Vinder.DAL.Domain
         public DateTime BirthDate { get; set; }
 
         public Emotion Emotion { get; set; }
+
+        public string EmotionGroup { get; set; }
     }
 }
