@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Vinder.Common;
 
 namespace VinderApi.Binders
@@ -13,7 +12,7 @@ namespace VinderApi.Binders
         private readonly Func<IFormFile, CommonFile> _expression;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FormFileModelBinder()
         {
@@ -25,7 +24,7 @@ namespace VinderApi.Binders
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bindingContext"></param>
         /// <returns></returns>

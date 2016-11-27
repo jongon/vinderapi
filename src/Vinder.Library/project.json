@@ -8,8 +8,12 @@
   },
 
   "frameworks": {
-    "netcoreapp1.0": {
+    "netcoreapp1.1": {
       "imports": [ "dotnet5.6", "portable-net462+win8" ]
     }
+  },
+
+  "runtimes": {
+    "win10-x64": {}
   }
 }

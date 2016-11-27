@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace VinderApi.Configuration
+﻿namespace VinderApi.Configuration
 {
-
     public class AzureStorageSettings
     {
         /// <summary>

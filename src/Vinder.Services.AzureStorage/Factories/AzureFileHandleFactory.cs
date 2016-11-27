@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Vinder.Services.AzureStorage.Interfaces;
+﻿using Vinder.Services.AzureStorage.Interfaces;
 
 namespace Vinder.Services.AzureStorage.Factories
 {

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Vinder.Common;
 
 namespace Vinder.Services.AzureStorage.Interfaces
 {
-
     /// <summary>
     /// Interface with File Handling
     /// </summary>
@@ -37,6 +34,5 @@ namespace Vinder.Services.AzureStorage.Interfaces
         /// </summary>
         /// <param name="fileName">File path to remove</param>
         Task RemoveFileAsync(string fileName);
-        
     }
 }

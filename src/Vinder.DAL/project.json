@@ -4,7 +4,10 @@
   "dependencies": {
     "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
     "Microsoft.EntityFrameworkCore.Tools": "1.1.0-preview4-final",
-    "NETStandard.Library": "1.6.1"
+    "NETStandard.Library": "1.6.1",
+    "System.Data.Common": "4.3.0",
+    "System.Data.SqlClient": "4.3.0",
+    "System.Runtime": "4.3.0"
   },
 
   "tools": {
@@ -14,9 +17,19 @@
     }
   },
 
+  "runtimes": {
+    "win10-x64": {}
+  },
+
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": [ "dotnet5.6", "portable-net462+win8" ]
+    "netcoreapp1.1": {
+      "imports": [ "dotnet5.6", "portable-net462+win8" ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.1.0-*"
+        }
+      }
     }
   }
 }

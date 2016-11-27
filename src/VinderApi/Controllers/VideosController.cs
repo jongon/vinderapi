@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using Vinder.Common;
 using Vinder.Services.AzureStorage.Interfaces;
 using VinderApi.Configuration;
@@ -77,7 +72,7 @@ namespace VinderApi.Controllers
 
                 var imageUri = await azureFileService.SaveFileAsync(video.File);
 
-                return Json(new { url = imageUri});
+                return Json(new { url = imageUri });
             }
             catch (Exception e)
             {
