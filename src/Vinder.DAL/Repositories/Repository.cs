@@ -18,7 +18,7 @@ namespace Vinder.DAL.Repositories
             Context = context;
         }
 
-        public TEntity Get(int id)
+        public TEntity Get(Guid id)
         {
             return Context.Set<TEntity>().Find(id);
         }
@@ -51,6 +51,13 @@ namespace Vinder.DAL.Repositories
         public void Remove(TEntity entity)
         {
             Context.Set<TEntity>().Remove(entity);
+        }
+
+        public void Update(TEntity entity)
+        {
+            Context.Attach(entity);
+            var entry = Context.Entry(entity);
+            entry.State = EntityState.Modified;
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)

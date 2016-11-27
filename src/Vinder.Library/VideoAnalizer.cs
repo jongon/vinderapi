@@ -27,16 +27,22 @@ namespace Vinders.Library
         public async Task<VideoMedia> PostVideo(string videoUrl)
         {
             var formUrl = $"{_mediaUrl}?source={videoUrl}";
-            return await FetchData(formUrl);
+            return await FetchData<VideoMedia>(formUrl);
         }
 
         public async Task<VideoMedia> GetAnalytics(string id)
         {
             var formUrl = $"{_mediaUrl}/{id}";
-            return await FetchData(formUrl);
+            return await FetchData<VideoMedia>(formUrl);
         }
 
-        private async Task<VideoMedia> FetchData(string url)
+        public async Task<VideoAnalysis.VideoAnalysis> GetAverageAnalytics(string id)
+        {
+            var formUrl = $"{_analyticsUrl}/{id}";
+            return await FetchData<VideoAnalysis.VideoAnalysis>(formUrl);
+        }
+
+        private async Task<T> FetchData<T>(string url)
         {
             using (var client = new HttpClient())
             {
@@ -46,7 +52,7 @@ namespace Vinders.Library
                 var stringContent = new StringContent("");
                 var response = await client.PostAsync(url, stringContent);
                 var responseString = response.Content.ReadAsStringAsync().Result;
-                var responseJson = JsonConvert.DeserializeObject<VideoMedia>(
+                var responseJson = JsonConvert.DeserializeObject<T>(
                     responseString,
                     new JsonSerializerSettings()
                     {
